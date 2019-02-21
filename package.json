@@ -2,20 +2,19 @@
   "name": "threads",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ]
-  },
+  "main": "dist/index_bundle.js",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "transpile": "babel app -d dist --copy-files",
+    "prepublishOnly": "npm run transpile",
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d dist",
+    "publish-demo": "npm run build && npm run deploy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
   },

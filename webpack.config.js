@@ -9,7 +9,7 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			{test: /\.(js)$/, use: 'babel-loader'},
+			{test: /\.(js|jsx)$/, use: 'babel-loader'},
 			{test: /\.css$/, use: ['style-loader','css-loader']}
 		]
 	},
@@ -18,5 +18,8 @@ module.exports = {
 		new HtmlWebPackPlugin({
 			template: './app/index.html'
 		})
-	]
+	],
+	devServer: {
+		port: 3001
+	}
 };
