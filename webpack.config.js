@@ -16,7 +16,7 @@ module.exports = {
 	mode: 'development',
 	plugins: [
 		new HtmlWebPackPlugin({
-			template: './index.html'
+			template: './app/index.html'
 		})
 	]
 };
